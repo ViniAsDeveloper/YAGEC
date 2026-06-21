@@ -7,4 +7,8 @@ if(NOT SOURCES)
     message(FATAL_ERROR "No sources found in src/")
 endif()
 
-add_executable(out ${SOURCES})
+add_executable(client ${SOURCES})
+
+include(cmake/Dependencies.cmake)
+
+target_link_libraries(client PRIVATE SDL3::SDL3)
